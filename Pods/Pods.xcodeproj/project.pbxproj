@@ -1,0 +1,352 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		35FE84464B18D7364FAF65EFADCFCA10 /* Pods-SignInTest-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9D547C62BB87E19CF04423E0E33248 /* Pods-SignInTest-dummy.m */; };
+		EF2E623A4D2C944350CB10CAFE09AE4C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545D92CDEE57782E7ABBD4465B6ABFE2 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		04EE678B8AB04117735820A64A19461E /* TwitterKitResources.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
+		16187FD60267E7F26E352285FD56C3F0 /* Pods-SignInTest-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SignInTest-resources.sh"; sourceTree = "<group>"; };
+		3A4143F97CDA5BAC9818A9FA0D4C42F4 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterCore.framework; path = iOS/TwitterCore.framework; sourceTree = "<group>"; };
+		545D92CDEE57782E7ABBD4465B6ABFE2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6BDE818F1E291BD7FBB300C6B0BEAE16 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
+		728F186BBE30DD01B43182CCF5B4E33B /* Pods-SignInTest-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SignInTest-acknowledgements.plist"; sourceTree = "<group>"; };
+		9954212EFFF1E26D6F1FCB149C36D985 /* Pods-SignInTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SignInTest.release.xcconfig"; sourceTree = "<group>"; };
+		AB840AD95FFD040D8F712458105BF409 /* Pods-SignInTest-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SignInTest-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BC4ED9901B872FF55B256DE2FA19D4F0 /* Pods-SignInTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SignInTest.debug.xcconfig"; sourceTree = "<group>"; };
+		D19306A89F4DAFA509DC2FBC96129FB3 /* libPods-SignInTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SignInTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1F7CED7EFFC782BA5BCF9C65FB8FE7F /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		FD9D547C62BB87E19CF04423E0E33248 /* Pods-SignInTest-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SignInTest-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8B9784CA980B0BA110139033E62D23C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF2E623A4D2C944350CB10CAFE09AE4C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20D1E612B0914806EF3C8B0BF8A12A27 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				334D28153E86F2404B7F3F870C022F14 /* Fabric */,
+				66E6A3B97329AA8D102CF49A6EAE8C42 /* TwitterCore */,
+				C153494D9C466AF7986AA36B04FCE051 /* TwitterKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		334D28153E86F2404B7F3F870C022F14 /* Fabric */ = {
+			isa = PBXGroup;
+			children = (
+				F5CBC81D8BD9D19FAD8F6388FDFCD492 /* Frameworks */,
+			);
+			path = Fabric;
+			sourceTree = "<group>";
+		};
+		497E02EF7EE37FA383D244AFCBA639D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A4143F97CDA5BAC9818A9FA0D4C42F4 /* TwitterCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		53B948F261D2258C78FE0AB45CF7D5C3 /* Pods-SignInTest */ = {
+			isa = PBXGroup;
+			children = (
+				AB840AD95FFD040D8F712458105BF409 /* Pods-SignInTest-acknowledgements.markdown */,
+				728F186BBE30DD01B43182CCF5B4E33B /* Pods-SignInTest-acknowledgements.plist */,
+				FD9D547C62BB87E19CF04423E0E33248 /* Pods-SignInTest-dummy.m */,
+				16187FD60267E7F26E352285FD56C3F0 /* Pods-SignInTest-resources.sh */,
+				BC4ED9901B872FF55B256DE2FA19D4F0 /* Pods-SignInTest.debug.xcconfig */,
+				9954212EFFF1E26D6F1FCB149C36D985 /* Pods-SignInTest.release.xcconfig */,
+			);
+			name = "Pods-SignInTest";
+			path = "Target Support Files/Pods-SignInTest";
+			sourceTree = "<group>";
+		};
+		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				545D92CDEE57782E7ABBD4465B6ABFE2 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		66E6A3B97329AA8D102CF49A6EAE8C42 /* TwitterCore */ = {
+			isa = PBXGroup;
+			children = (
+				497E02EF7EE37FA383D244AFCBA639D9 /* Frameworks */,
+			);
+			path = TwitterCore;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				20D1E612B0914806EF3C8B0BF8A12A27 /* Pods */,
+				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				9E27AFF00A100BE62A2BB033833ADFF0 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		9958567BEA943CBA5CD7652B4EDFD6FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1F7CED7EFFC782BA5BCF9C65FB8FE7F /* TwitterKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9E27AFF00A100BE62A2BB033833ADFF0 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				53B948F261D2258C78FE0AB45CF7D5C3 /* Pods-SignInTest */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53F661C0CA7190D2CF05023FB33D61E4 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C153494D9C466AF7986AA36B04FCE051 /* TwitterKit */ = {
+			isa = PBXGroup;
+			children = (
+				9958567BEA943CBA5CD7652B4EDFD6FF /* Frameworks */,
+				ECE1A6433714DBA9584042CC97D55D38 /* Resources */,
+			);
+			path = TwitterKit;
+			sourceTree = "<group>";
+		};
+		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D19306A89F4DAFA509DC2FBC96129FB3 /* libPods-SignInTest.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ECE1A6433714DBA9584042CC97D55D38 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				04EE678B8AB04117735820A64A19461E /* TwitterKitResources.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F5CBC81D8BD9D19FAD8F6388FDFCD492 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6BDE818F1E291BD7FBB300C6B0BEAE16 /* Fabric.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F6AECF0DA85463C6C1E7F6E1138BE3BE /* Pods-SignInTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50E24317C0EEEB8245BD7AA0F4E828D5 /* Build configuration list for PBXNativeTarget "Pods-SignInTest" */;
+			buildPhases = (
+				3E2E5B1D53E8DC92719456379FDC4F7E /* Sources */,
+				8B9784CA980B0BA110139033E62D23C6 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-SignInTest";
+			productName = "Pods-SignInTest";
+			productReference = D19306A89F4DAFA509DC2FBC96129FB3 /* libPods-SignInTest.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F6AECF0DA85463C6C1E7F6E1138BE3BE /* Pods-SignInTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3E2E5B1D53E8DC92719456379FDC4F7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35FE84464B18D7364FAF65EFADCFCA10 /* Pods-SignInTest-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		558C07ED365864137E0D7B636EDBB414 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC4ED9901B872FF55B256DE2FA19D4F0 /* Pods-SignInTest.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6231C720805AC498FF7F63933A2366BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9954212EFFF1E26D6F1FCB149C36D985 /* Pods-SignInTest.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		8D1534490D941DCA47C62AC4314182AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		C5A18280E9321A9268D1C80B7DA43967 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D1534490D941DCA47C62AC4314182AF /* Debug */,
+				C5A18280E9321A9268D1C80B7DA43967 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50E24317C0EEEB8245BD7AA0F4E828D5 /* Build configuration list for PBXNativeTarget "Pods-SignInTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				558C07ED365864137E0D7B636EDBB414 /* Debug */,
+				6231C720805AC498FF7F63933A2366BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

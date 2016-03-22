@@ -7,16 +7,37 @@
 //
 
 #import "AppDelegate.h"
+#import <Fabric/Fabric.h>
+#import <TwitterKit/TwitterKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
-@interface AppDelegate ()
+
+@interface AppDelegate () <GIDSignInDelegate>
 
 @end
 
 @implementation AppDelegate
 
+static NSString * const kClientID =
+@"762422706082-l99p1vdu7l8f6vtb664h70a1leo1r6jh.apps.googleusercontent.com";
+
+static NSString * const kConsumerKey =
+@"rOnxWhQNrgZCwLa8mqIu3wj90";
+
+static NSString * const kConsumerSecret =
+@"GLUgfYQwo2aB5eIkHL8lUrsF1ZXf5BFeqX9PNvS4vYqleAX40W";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [[Twitter sharedInstance] startWithConsumerKey:kConsumerKey
+                                    consumerSecret:kConsumerSecret];
+    [Fabric with:@[[Twitter class]]];
+    
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
+    
+    
+    [GIDSignIn sharedInstance].clientID = kClientID;
+    [GIDSignIn sharedInstance].delegate = self;
     return YES;
 }
 
@@ -35,11 +56,42 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBSDKAppEvents activateApp];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    NSString *URLString = [url absoluteString];
+    if ([[URLString substringToIndex:2] isEqualToString:@"fb"]) {
+        return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                              openURL:url
+                                                    sourceApplication:sourceApplication
+                                                           annotation:annotation];
+    }else{
+        return [[GIDSignIn sharedInstance] handleURL:url
+                                   sourceApplication:sourceApplication
+                                          annotation:annotation];
+    }
+}
+
+- (void)signIn:(GIDSignIn *)signIn didSignInForUser:(GIDGoogleUser *)user withError:(NSError *)error{
+    if (error != nil) {
+        NSLog(@"we have an error:%@",error);
+    }else{
+        NSString *userId = user.userID;                  // For client-side use only!
+        NSString *idToken = user.authentication.idToken; // Safe to send to the server
+        NSString *name = user.profile.name;
+        NSString *email = user.profile.email;
+        NSLog(@"success sign in with google: %@ , %@ , %@ , %@",userId,idToken,name,email);
+    }
+    
+}
+
 
 @end

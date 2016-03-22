@@ -7,15 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		579CED011CA0FD5700A71C8D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 579CECFE1CA0FD5700A71C8D /* FBSDKCoreKit.framework */; };
+		579CED021CA0FD5700A71C8D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 579CECFF1CA0FD5700A71C8D /* FBSDKLoginKit.framework */; };
+		579CED031CA0FD5700A71C8D /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 579CED001CA0FD5700A71C8D /* FBSDKShareKit.framework */; };
 		57ADEBE01CA0F5C3000EFDCE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ADEBDF1CA0F5C3000EFDCE /* main.m */; };
 		57ADEBE31CA0F5C3000EFDCE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ADEBE21CA0F5C3000EFDCE /* AppDelegate.m */; };
 		57ADEBE61CA0F5C3000EFDCE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ADEBE51CA0F5C3000EFDCE /* ViewController.m */; };
 		57ADEBE91CA0F5C3000EFDCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57ADEBE71CA0F5C3000EFDCE /* Main.storyboard */; };
 		57ADEBEB1CA0F5C3000EFDCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57ADEBEA1CA0F5C3000EFDCE /* Assets.xcassets */; };
 		57ADEBEE1CA0F5C3000EFDCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57ADEBEC1CA0F5C3000EFDCE /* LaunchScreen.storyboard */; };
+		57F05BBF1CA12A78005720E2 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F05BBE1CA12A78005720E2 /* GoogleSignIn.framework */; };
+		57F05BC11CA12A88005720E2 /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 57F05BC01CA12A88005720E2 /* GoogleSignIn.bundle */; };
+		57F05BC31CA12B8E005720E2 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F05BC21CA12B8E005720E2 /* libz.tbd */; };
+		57F05BC51CA12B98005720E2 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F05BC41CA12B98005720E2 /* AddressBook.framework */; };
+		57F05BC71CA12BB4005720E2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F05BC61CA12BB4005720E2 /* SystemConfiguration.framework */; };
+		57F05BC91CA12BBD005720E2 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F05BC81CA12BBD005720E2 /* SafariServices.framework */; };
+		57F05BCD1CA13711005720E2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57F05BCC1CA13711005720E2 /* GoogleService-Info.plist */; };
+		57F05BCE1CA1486C005720E2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F05BCA1CA12BC3005720E2 /* StoreKit.framework */; };
+		622D8F888917C2B597BEE5B4 /* libPods-SignInTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AADB3B1AD6137BAA6264FE5 /* libPods-SignInTest.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		579CECFE1CA0FD5700A71C8D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		579CECFF1CA0FD5700A71C8D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		579CED001CA0FD5700A71C8D /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		57ADEBDB1CA0F5C3000EFDCE /* SignInTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignInTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57ADEBDF1CA0F5C3000EFDCE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		57ADEBE11CA0F5C3000EFDCE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +41,17 @@
 		57ADEBEA1CA0F5C3000EFDCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57ADEBED1CA0F5C3000EFDCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57ADEBEF1CA0F5C3000EFDCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57F05BBE1CA12A78005720E2 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
+		57F05BC01CA12A88005720E2 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
+		57F05BC21CA12B8E005720E2 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		57F05BC41CA12B98005720E2 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		57F05BC61CA12BB4005720E2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		57F05BC81CA12BBD005720E2 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		57F05BCA1CA12BC3005720E2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		57F05BCC1CA13711005720E2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7AADB3B1AD6137BAA6264FE5 /* libPods-SignInTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SignInTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		910063C203F92659ED453C6F /* Pods-SignInTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignInTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignInTest/Pods-SignInTest.debug.xcconfig"; sourceTree = "<group>"; };
+		ED77B00D99B3F4B9F7F0EEE5 /* Pods-SignInTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignInTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SignInTest/Pods-SignInTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +59,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57F05BCE1CA1486C005720E2 /* StoreKit.framework in Frameworks */,
+				57F05BC91CA12BBD005720E2 /* SafariServices.framework in Frameworks */,
+				57F05BC71CA12BB4005720E2 /* SystemConfiguration.framework in Frameworks */,
+				57F05BC51CA12B98005720E2 /* AddressBook.framework in Frameworks */,
+				57F05BC31CA12B8E005720E2 /* libz.tbd in Frameworks */,
+				579CED031CA0FD5700A71C8D /* FBSDKShareKit.framework in Frameworks */,
+				622D8F888917C2B597BEE5B4 /* libPods-SignInTest.a in Frameworks */,
+				579CED011CA0FD5700A71C8D /* FBSDKCoreKit.framework in Frameworks */,
+				579CED021CA0FD5700A71C8D /* FBSDKLoginKit.framework in Frameworks */,
+				57F05BBF1CA12A78005720E2 /* GoogleSignIn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C00F98D76C9049151FC2D11 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				910063C203F92659ED453C6F /* Pods-SignInTest.debug.xcconfig */,
+				ED77B00D99B3F4B9F7F0EEE5 /* Pods-SignInTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		57ADEBD21CA0F5C3000EFDCE = {
 			isa = PBXGroup;
 			children = (
 				57ADEBDD1CA0F5C3000EFDCE /* SignInTest */,
 				57ADEBDC1CA0F5C3000EFDCE /* Products */,
+				3C00F98D76C9049151FC2D11 /* Pods */,
+				BF2B5C3DA334016AFA818AB6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,9 +110,6 @@
 				57ADEBE41CA0F5C3000EFDCE /* ViewController.h */,
 				57ADEBE51CA0F5C3000EFDCE /* ViewController.m */,
 				57ADEBE71CA0F5C3000EFDCE /* Main.storyboard */,
-				57ADEBEA1CA0F5C3000EFDCE /* Assets.xcassets */,
-				57ADEBEC1CA0F5C3000EFDCE /* LaunchScreen.storyboard */,
-				57ADEBEF1CA0F5C3000EFDCE /* Info.plist */,
 				57ADEBDE1CA0F5C3000EFDCE /* Supporting Files */,
 			);
 			path = SignInTest;
@@ -74,9 +118,31 @@
 		57ADEBDE1CA0F5C3000EFDCE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				57F05BCC1CA13711005720E2 /* GoogleService-Info.plist */,
+				57F05BC01CA12A88005720E2 /* GoogleSignIn.bundle */,
+				57ADEBEA1CA0F5C3000EFDCE /* Assets.xcassets */,
+				57ADEBEC1CA0F5C3000EFDCE /* LaunchScreen.storyboard */,
+				57ADEBEF1CA0F5C3000EFDCE /* Info.plist */,
 				57ADEBDF1CA0F5C3000EFDCE /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BF2B5C3DA334016AFA818AB6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57F05BCA1CA12BC3005720E2 /* StoreKit.framework */,
+				57F05BC81CA12BBD005720E2 /* SafariServices.framework */,
+				57F05BC61CA12BB4005720E2 /* SystemConfiguration.framework */,
+				57F05BC41CA12B98005720E2 /* AddressBook.framework */,
+				57F05BBE1CA12A78005720E2 /* GoogleSignIn.framework */,
+				579CECFE1CA0FD5700A71C8D /* FBSDKCoreKit.framework */,
+				579CECFF1CA0FD5700A71C8D /* FBSDKLoginKit.framework */,
+				579CED001CA0FD5700A71C8D /* FBSDKShareKit.framework */,
+				57F05BC21CA12B8E005720E2 /* libz.tbd */,
+				7AADB3B1AD6137BAA6264FE5 /* libPods-SignInTest.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,9 +152,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57ADEBF21CA0F5C3000EFDCE /* Build configuration list for PBXNativeTarget "SignInTest" */;
 			buildPhases = (
+				3990F0816066F1BBED4D8886 /* Check Pods Manifest.lock */,
 				57ADEBD71CA0F5C3000EFDCE /* Sources */,
 				57ADEBD81CA0F5C3000EFDCE /* Frameworks */,
 				57ADEBD91CA0F5C3000EFDCE /* Resources */,
+				65DA3C56FF5310C14E4DD92E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -137,13 +205,48 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57F05BC11CA12A88005720E2 /* GoogleSignIn.bundle in Resources */,
 				57ADEBEE1CA0F5C3000EFDCE /* LaunchScreen.storyboard in Resources */,
+				57F05BCD1CA13711005720E2 /* GoogleService-Info.plist in Resources */,
 				57ADEBEB1CA0F5C3000EFDCE /* Assets.xcassets in Resources */,
 				57ADEBE91CA0F5C3000EFDCE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3990F0816066F1BBED4D8886 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		65DA3C56FF5310C14E4DD92E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SignInTest/Pods-SignInTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		57ADEBD71CA0F5C3000EFDCE /* Sources */ = {
@@ -262,9 +365,17 @@
 		};
 		57ADEBF31CA0F5C3000EFDCE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 910063C203F92659ED453C6F /* Pods-SignInTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SignInTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DotC.SignInTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -273,9 +384,17 @@
 		};
 		57ADEBF41CA0F5C3000EFDCE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED77B00D99B3F4B9F7F0EEE5 /* Pods-SignInTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SignInTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DotC.SignInTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -301,6 +420,7 @@
 				57ADEBF41CA0F5C3000EFDCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
