@@ -88,7 +88,7 @@ static NSString * const kConsumerSecret =
         NSString *idToken = user.authentication.idToken; // Safe to send to the server
         NSString *name = user.profile.name;
         NSString *email = user.profile.email;
-        NSLog(@"success sign in with google: %@ , %@ , %@ , %@",userId,idToken,name,email);
+        NSLog(@"success sign in with google: %@ \n, %@ \n, %@ \n, %@\n",userId,idToken,name,email);
     }
     
 }
