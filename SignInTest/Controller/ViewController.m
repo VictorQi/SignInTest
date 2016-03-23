@@ -11,7 +11,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <GoogleSignIn/GoogleSignIn.h>
-
+#import "DeviceUID.h"
 
 @interface ViewController () <GIDSignInUIDelegate>
 
@@ -21,6 +21,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSString *uuid = [DeviceUID uid];
+    NSLog(@"uuid is %@",uuid);
     
     [GIDSignIn sharedInstance].uiDelegate = self;
     
