@@ -9,8 +9,8 @@
 #import "DeviceUID.h"
 
 @interface DeviceUID ()
-@property (nonatomic, readonly, strong) NSString *uidKey;
-@property (nonatomic, readonly, strong) NSString *uid;
+@property (nonatomic, readonly, copy) NSString *uidKey;
+@property (nonatomic, readonly, copy) NSString *uid;
 @end
 
 @implementation DeviceUID

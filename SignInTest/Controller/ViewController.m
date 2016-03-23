@@ -11,19 +11,15 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <GoogleSignIn/GoogleSignIn.h>
-#import "DeviceUID.h"
 
-@interface ViewController () <GIDSignInUIDelegate>
-
+@interface ViewController () <GIDSignInUIDelegate,GIDSignInDelegate>
+@property (nonatomic, strong) FBSDKLoginManager *fbLogin;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    NSString *uuid = [DeviceUID uid];
-    NSLog(@"uuid is %@",uuid);
     
     [GIDSignIn sharedInstance].uiDelegate = self;
     
@@ -40,12 +36,22 @@
     [twitterButton setContentMode:UIViewContentModeCenter];
     [twitterButton addTarget:self action:@selector(logInWithTwitter) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:twitterButton];
-
+    
+    
+    [GIDSignIn sharedInstance].delegate = self;
+    
     GIDSignInButton *googleButton = [[GIDSignInButton alloc]init];
     googleButton.style = kGIDSignInButtonStyleIconOnly;
     googleButton.center = CGPointMake(self.view.center.x, 200);
     [self.view addSubview:googleButton];
     
+    UIButton *signOutButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    signOutButton.frame = CGRectMake(0, 0, 80, 50);
+    signOutButton.center = CGPointMake(self.view.center.x, 300);
+    [signOutButton setBackgroundColor:[UIColor redColor]];
+    [signOutButton setTitle:@"SignOut" forState:UIControlStateNormal];
+    [signOutButton addTarget:self action:@selector(AccountSignOut) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:signOutButton];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,8 +60,13 @@
 }
 
 - (void)logInWithFacebook{
-    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
-    [login logInWithReadPermissions: @[@"public_profile"]
+    FBSDKLoginManager *login = self.fbLogin;
+    if (!login) {
+        login = [[FBSDKLoginManager alloc] init];
+        self.fbLogin = login;
+    }
+    __weak typeof(self) weakSelf = self;
+    [login logInWithReadPermissions: @[@"public_profile",@"email",@"user_friends"]
                  fromViewController:self
                             handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
                                 if (error) {
@@ -63,20 +74,74 @@
                                 } else if (result.isCancelled) {
                                     NSLog(@"Cancelled");
                                 } else {
-                                    NSLog(@"Logged in");
+                                    weakSelf.signInType = SwiftLiveSignInTypeFacebook;
+                                    
+                                    //@{@"fields": @"id, name, link, first_name, last_name, picture.type(large), email, birthday, bio ,location ,friends ,hometown , friendlists"}
+                                    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]initWithGraphPath:@"me" parameters:@{@"fields": @"id,name,link,email,friends"}];
+                                    [request startWithCompletionHandler:
+                                     ^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                                         if (error != nil) {
+                                             NSLog(@"Error Getting Info %@",error);
+                                         }
+                                         NSLog(@"user email is %@",[result valueForKey:@"email"]);
+                                         NSLog(@"user facebook id is %@",[result valueForKey:@"id"]);
+                                         NSLog(@"user facebook name is %@",[result valueForKey:@"name"]);
+                                         NSLog(@"user facebook link is %@",[result valueForKey:@"link"]);
+                                         NSLog(@"user friends %@",[result valueForKey:@"friends"]);
+                                     }];
                                 }
                             }];
 }
 
 - (void)logInWithTwitter{
+    __weak typeof(self) weakSelf = self;
+    
     [[Twitter sharedInstance] logInWithCompletion:^(TWTRSession *session, NSError *error) {
         if (session) {
+            weakSelf.signInType = SwiftLiveSignInTypeTwitter;
+            
             NSLog(@"signed in as %@", [session userName]);
+            NSLog(@"twitter user id is %@",[session userID]);
         } else {
             NSLog(@"error: %@", [error localizedDescription]);
         }
     }];
 }
 
+- (void)signIn:(GIDSignIn *)signIn didSignInForUser:(GIDGoogleUser *)user withError:(NSError *)error{
+    if (error != nil) {
+        NSLog(@"we have an error:%@",error);
+    }else{
+        self.signInType = SwiftLiveSignInTypeGoogle;
+        
+        NSString *userId = user.userID;                  // For client-side use only!
+        NSString *idToken = user.authentication.idToken; // Safe to send to the server
+        NSString *name = user.profile.name;
+        NSString *email = user.profile.email;
+        NSLog(@"success sign in with google: %@, %@, %@",userId,name,email);
+    }
+}
 
+- (void)AccountSignOut{
+    switch (self.signInType) {
+        case SwiftLiveSignInTypeFacebook:
+            [self.fbLogin logOut];
+            self.signInType = SwiftLiveSignInTypeNone;
+            NSLog(@"twitter account signs out successfully");
+            break;
+        case SwiftLiveSignInTypeTwitter:
+            self.signInType = SwiftLiveSignInTypeNone;
+            [[Twitter sharedInstance] logOut];
+            NSLog(@"twitter account signs out successfully");
+            break;
+        case SwiftLiveSignInTypeGoogle:
+            self.signInType = SwiftLiveSignInTypeNone;
+            [[GIDSignIn sharedInstance] signOut];
+            NSLog(@"google account signs out successfully");
+            break;
+        default:
+            NSLog(@"No Accounts Signing In");
+            break;
+    }
+}
 @end

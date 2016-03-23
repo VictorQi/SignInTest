@@ -10,5 +10,11 @@
 #import <UIKit/UIKit.h>
 
 @interface DeviceUID : NSObject
+/**
+ *  Method To Get UUID
+ *
+ *  @return uuid string
+ */
 + (NSString *)uid;
+
 @end

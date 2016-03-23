@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_OPTIONS(NSUInteger, SwiftLiveSignInType){
+    SwiftLiveSignInTypeNone     = 0,
+    SwiftLiveSignInTypeTwitter  = 1 << 0,
+    SwiftLiveSignInTypeFacebook = 1 << 1,
+    SwiftLiveSignInTypeGoogle   = 1 << 2
+};
+
 @interface ViewController : UIViewController
-
-
+@property (nonatomic, assign) SwiftLiveSignInType signInType;
 @end
 

@@ -7,12 +7,15 @@
 //
 
 #import "AppDelegate.h"
+#import <GoogleSignIn/GoogleSignIn.h>
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "Model/DeviceUID.h"
 
+@interface AppDelegate ()
 
-@interface AppDelegate () <GIDSignInDelegate>
+@property (nonatomic, readwrite, copy) NSString *uuid;
 
 @end
 
@@ -35,9 +38,10 @@ static NSString * const kConsumerSecret =
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
     
+    self.uuid = [DeviceUID uid];
     
     [GIDSignIn sharedInstance].clientID = kClientID;
-    [GIDSignIn sharedInstance].delegate = self;
+    
     return YES;
 }
 
@@ -79,19 +83,5 @@ static NSString * const kConsumerSecret =
                                           annotation:annotation];
     }
 }
-
-- (void)signIn:(GIDSignIn *)signIn didSignInForUser:(GIDGoogleUser *)user withError:(NSError *)error{
-    if (error != nil) {
-        NSLog(@"we have an error:%@",error);
-    }else{
-        NSString *userId = user.userID;                  // For client-side use only!
-        NSString *idToken = user.authentication.idToken; // Safe to send to the server
-        NSString *name = user.profile.name;
-        NSString *email = user.profile.email;
-        NSLog(@"success sign in with google: %@ \n, %@ \n, %@ \n, %@\n",userId,idToken,name,email);
-    }
-    
-}
-
 
 @end
