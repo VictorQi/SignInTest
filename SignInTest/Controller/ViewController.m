@@ -10,10 +10,15 @@
 #import <TwitterKit/TwitterKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
 #import <GoogleSignIn/GoogleSignIn.h>
 
-@interface ViewController () <GIDSignInUIDelegate,GIDSignInDelegate>
+@import SafariServices;
+
+@interface ViewController () <GIDSignInUIDelegate,GIDSignInDelegate,SFSafariViewControllerDelegate,FBSDKSharingDelegate>
+
 @property (nonatomic, strong) FBSDKLoginManager *fbLogin;
+
 @end
 
 @implementation ViewController
@@ -48,16 +53,56 @@
     UIButton *signOutButton = [UIButton buttonWithType:UIButtonTypeSystem];
     signOutButton.frame = CGRectMake(0, 0, 80, 50);
     signOutButton.center = CGPointMake(self.view.center.x, 300);
-    [signOutButton setBackgroundColor:[UIColor redColor]];
-    [signOutButton setTitle:@"SignOut" forState:UIControlStateNormal];
-    [signOutButton addTarget:self action:@selector(AccountSignOut) forControlEvents:UIControlEventTouchUpInside];
+    [signOutButton setBackgroundColor:[UIColor darkGrayColor]];
+    [signOutButton setTitle:@"SignOut"
+                   forState:UIControlStateNormal];
+    [signOutButton addTarget:self
+                      action:@selector(AccountSignOut)
+            forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:signOutButton];
+    
+    UIButton *shareToGoogleButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    shareToGoogleButton.frame = CGRectMake(0, 0, 120, 30);
+    shareToGoogleButton.center = CGPointMake(self.view.center.x, 350);
+    [shareToGoogleButton setBackgroundColor:[UIColor redColor]];
+    [shareToGoogleButton setTitle:@"shareToGoogle"
+                         forState:UIControlStateNormal];
+    [shareToGoogleButton addTarget:self
+                            action:@selector(shareToGoogle)
+                  forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:shareToGoogleButton];
+    
+    
+    
+    UIButton *shareToFacebookButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    shareToFacebookButton.frame = CGRectMake(0, 0, 150, 30);
+    shareToFacebookButton.center = CGPointMake(self.view.center.x, 400);
+    [shareToFacebookButton setBackgroundColor:[UIColor blueColor]];
+    [shareToFacebookButton setTitle:@"shareToFacebook"
+                         forState:UIControlStateNormal];
+    [shareToFacebookButton addTarget:self
+                            action:@selector(shareToFacebook)
+                  forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:shareToFacebookButton];
+    
+    UIButton *shareToTwitterButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    shareToTwitterButton.frame = CGRectMake(0, 0, 150, 30);
+    shareToTwitterButton.center = CGPointMake(self.view.center.x, 450);
+    [shareToTwitterButton setBackgroundColor:[UIColor lightTextColor]];
+    [shareToTwitterButton setTitle:@"shareToTwitter"
+                           forState:UIControlStateNormal];
+    [shareToTwitterButton addTarget:self
+                              action:@selector(shareToTwitter)
+                    forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:shareToTwitterButton];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Sign In With Facebook
 
 - (void)logInWithFacebook{
     FBSDKLoginManager *login = self.fbLogin;
@@ -93,6 +138,8 @@
                             }];
 }
 
+#pragma mark - Sign In With Twitter
+
 - (void)logInWithTwitter{
     __weak typeof(self) weakSelf = self;
     
@@ -108,6 +155,8 @@
     }];
 }
 
+#pragma mark - Sign In With Google
+
 - (void)signIn:(GIDSignIn *)signIn didSignInForUser:(GIDGoogleUser *)user withError:(NSError *)error{
     if (error != nil) {
         NSLog(@"we have an error:%@",error);
@@ -122,6 +171,8 @@
     }
 }
 
+#pragma mark - Sign Out Method
+
 - (void)AccountSignOut{
     switch (self.signInType) {
         case SwiftLiveSignInTypeFacebook:
@@ -135,13 +186,133 @@
             NSLog(@"twitter account signs out successfully");
             break;
         case SwiftLiveSignInTypeGoogle:
-            self.signInType = SwiftLiveSignInTypeNone;
-            [[GIDSignIn sharedInstance] signOut];
-            NSLog(@"google account signs out successfully");
+            [[GIDSignIn sharedInstance] disconnect];
             break;
         default:
             NSLog(@"No Accounts Signing In");
             break;
     }
 }
+
+- (void)signIn:(GIDSignIn *)signIn
+didDisconnectWithUser:(GIDGoogleUser *)user
+     withError:(NSError *)error
+{
+    if (error != nil) {
+        NSLog(@"Disconnect Google");
+    }else{
+        self.signInType = SwiftLiveSignInTypeNone;
+        [[GIDSignIn sharedInstance] signOut]; // Do signout stuff
+        NSLog(@"google account signs out successfully");
+    }
+}
+
+#pragma mark - Show Alert
+
+- (void)showAlertWithTitle:(NSString *)title message:(NSString *)message{
+    
+    NSLog(@"title is %@",title);
+    NSLog(@"message is %@",message);
+}
+
+#pragma mark - Share To Google Plus
+
+- (void)shareToGoogle{
+    NSURL *url = [NSURL URLWithString:@"http://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Facebook_Headquarters_Menlo_Park.jpg/2880px-Facebook_Headquarters_Menlo_Park.jpg"];
+    [self showGooglePlusShare:url];
+}
+
+- (void)showGooglePlusShare:(NSURL*)shareURL {
+    
+    // Construct the Google+ share URL
+    NSURLComponents* urlComponents = [[NSURLComponents alloc]
+                                      initWithString:@"https://plus.google.com/share"];
+    urlComponents.queryItems = @[[[NSURLQueryItem alloc]
+                                  initWithName:@"url"
+                                  value:[shareURL absoluteString]]];
+    NSURL* url = [urlComponents URL];
+    
+    if ([SFSafariViewController class]) {
+        // Open the URL in SFSafariViewController (iOS 9+)
+        SFSafariViewController* controller = [[SFSafariViewController alloc]
+                                              initWithURL:url];
+        controller.delegate = self;
+        [self presentViewController:controller animated:YES completion:nil];
+    } else {
+        // Open the URL in the device's browser
+        [[UIApplication sharedApplication] openURL:url];
+    }
+}
+
+#pragma mark - Share To Facebook
+
+- (void)shareToFacebook{
+    if (![FBSDKAccessToken currentAccessToken]) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Warning"
+                                                       message:@"no facebook account signing in"
+                                                      delegate:self
+                                             cancelButtonTitle:@"OK"
+                                             otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    
+    NSURL *contentURL = [[NSURL alloc]
+                         initWithString:@"https://github.com"];
+    NSURL *imageURL = [NSURL URLWithString:@"http://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Facebook_Headquarters_Menlo_Park.jpg/2880px-Facebook_Headquarters_Menlo_Park.jpg"];
+    FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc]init];
+    content.contentURL = contentURL;
+    content.contentTitle = @"My Share Title";
+    content.contentDescription = @"For Facebook Share Testing";
+    content.imageURL = imageURL;
+    content.ref = @"myRefId";
+    
+    FBSDKShareDialog *shareDialog = [[FBSDKShareDialog alloc]init];
+    shareDialog.shareContent = content;
+    shareDialog.delegate = self;
+    shareDialog.fromViewController = self;
+    NSError *error = nil;
+    BOOL validation = [shareDialog validateWithError:&error];
+    if (!validation) {
+        NSLog(@"Error in sharing to facebook: %@",error);
+    }else{
+       [shareDialog show];
+    }
+}
+
+- (void)sharer:(id<FBSDKSharing>)sharer didCompleteWithResults:(NSDictionary *)results {
+    [self showAlertWithTitle:@"Share Succeed" message:(NSString *)[results allValues]];
+}
+
+- (void)sharer:(id<FBSDKSharing>)sharer didFailWithError:(NSError *)error{
+    [self showAlertWithTitle:@"Share Failed" message:[NSString stringWithFormat:@"Error: %@",error]];
+}
+
+- (void)sharerDidCancel:(id<FBSDKSharing>)sharer{
+    [self showAlertWithTitle:@"Share Canceled" message:nil];
+}
+
+#pragma mark - Share To Twitter
+
+- (void)shareToTwitter{
+    
+    TWTRComposer *composer = [[TWTRComposer alloc] init];
+    
+    [composer setText:@"just testing"];
+    [composer setURL:[NSURL URLWithString:@"https://github.com"]];
+    [composer setImage:[UIImage imageWithContentsOfFile:
+                        [[NSBundle mainBundle]pathForResource:@"Facebook_Headquarters_Menlo_Park"
+                                                       ofType:@"jpg"]]];
+    
+    // Called from a UIViewController
+    [composer showFromViewController:self completion:^(TWTRComposerResult result) {
+        if (result == TWTRComposerResultCancelled) {
+            NSLog(@"Tweet composition cancelled");
+        }
+        else {
+            NSLog(@"Sending Tweet!");
+        }
+    }];
+}
+
 @end
