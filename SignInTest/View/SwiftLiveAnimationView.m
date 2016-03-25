@@ -10,12 +10,28 @@
 
 @implementation SwiftLiveAnimationView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
+    if (self = [super initWithCoder:aDecoder]) {
+        [self setPopHeartView];
+    }
+    
+    return self;
 }
-*/
 
+- (instancetype)initWithFrame:(CGRect)frame{
+    if (self = [super initWithFrame:frame]) {
+        [self setPopHeartView];
+    }
+    
+    return self;
+}
+
+
+- (void)setPopHeartView{
+    
+}
+
+- (void)setGiftView{
+    
+}
 @end
