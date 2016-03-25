@@ -12,12 +12,15 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <FBSDKShareKit/FBSDKShareKit.h>
 #import <GoogleSignIn/GoogleSignIn.h>
+#import <Accounts/Accounts.h>
+
 
 @import SafariServices;
 
 @interface ViewController () <GIDSignInUIDelegate,GIDSignInDelegate,SFSafariViewControllerDelegate,FBSDKSharingDelegate>
 
 @property (nonatomic, strong) FBSDKLoginManager *fbLogin;
+@property (nonatomic, assign) BOOL              twitterValidate;
 
 @end
 
@@ -25,6 +28,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.twitterValidate = NO;
+    
+    [self getTwitterAccountInformation];
     
     [GIDSignIn sharedInstance].uiDelegate = self;
     
@@ -294,7 +301,31 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 
 #pragma mark - Share To Twitter
 
+- (void)getTwitterAccountInformation
+{
+    ACAccountStore *accountStore = [[ACAccountStore alloc] init];
+    ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+    
+    [accountStore requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error) {
+        if(granted) {
+            NSArray *accountsArray = [accountStore accountsWithAccountType:accountType];
+            
+            if ([accountsArray count] > 0) {
+                ACAccount *twitterAccount = [accountsArray objectAtIndex:0];
+                NSLog(@"%@",twitterAccount.username);
+                NSLog(@"%@",twitterAccount.accountType);
+                
+                self.twitterValidate = YES;
+            }
+        }
+    }];
+}
+
 - (void)shareToTwitter{
+    if (!self.twitterValidate) {
+        NSLog(@"twitter account invalidate");
+        return;
+    }
     
     TWTRComposer *composer = [[TWTRComposer alloc] init];
     

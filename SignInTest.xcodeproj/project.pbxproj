@@ -18,6 +18,7 @@
 		57ADEBEE1CA0F5C3000EFDCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57ADEBEC1CA0F5C3000EFDCE /* LaunchScreen.storyboard */; };
 		57BC038D1CA2A21400FC8577 /* SwiftLiveAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BC038C1CA2A21400FC8577 /* SwiftLiveAnimationView.m */; };
 		57C4F3A11CA3C4D800739E41 /* Facebook_Headquarters_Menlo_Park.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 57C4F3A01CA3C4D800739E41 /* Facebook_Headquarters_Menlo_Park.jpg */; };
+		57C4F3A31CA4D66300739E41 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57C4F3A21CA4D66300739E41 /* Accounts.framework */; };
 		57F05BBF1CA12A78005720E2 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F05BBE1CA12A78005720E2 /* GoogleSignIn.framework */; };
 		57F05BC11CA12A88005720E2 /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 57F05BC01CA12A88005720E2 /* GoogleSignIn.bundle */; };
 		57F05BC31CA12B8E005720E2 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F05BC21CA12B8E005720E2 /* libz.tbd */; };
@@ -47,6 +48,7 @@
 		57BC038B1CA2A21400FC8577 /* SwiftLiveAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftLiveAnimationView.h; sourceTree = "<group>"; };
 		57BC038C1CA2A21400FC8577 /* SwiftLiveAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftLiveAnimationView.m; sourceTree = "<group>"; };
 		57C4F3A01CA3C4D800739E41 /* Facebook_Headquarters_Menlo_Park.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Facebook_Headquarters_Menlo_Park.jpg; path = Images/Facebook_Headquarters_Menlo_Park.jpg; sourceTree = SOURCE_ROOT; };
+		57C4F3A21CA4D66300739E41 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		57F05BBE1CA12A78005720E2 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
 		57F05BC01CA12A88005720E2 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
 		57F05BC21CA12B8E005720E2 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -68,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57C4F3A31CA4D66300739E41 /* Accounts.framework in Frameworks */,
 				57F05BCE1CA1486C005720E2 /* StoreKit.framework in Frameworks */,
 				57F05BC91CA12BBD005720E2 /* SafariServices.framework in Frameworks */,
 				57F05BC71CA12BB4005720E2 /* SystemConfiguration.framework in Frameworks */,
@@ -178,6 +181,7 @@
 		BF2B5C3DA334016AFA818AB6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57C4F3A21CA4D66300739E41 /* Accounts.framework */,
 				57F05BCA1CA12BC3005720E2 /* StoreKit.framework */,
 				57F05BC81CA12BBD005720E2 /* SafariServices.framework */,
 				57F05BC61CA12BB4005720E2 /* SystemConfiguration.framework */,
