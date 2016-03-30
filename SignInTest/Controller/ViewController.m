@@ -13,14 +13,17 @@
 #import <FBSDKShareKit/FBSDKShareKit.h>
 #import <GoogleSignIn/GoogleSignIn.h>
 #import <Accounts/Accounts.h>
-
+#import "SwiftLiveOullinedLabel.h"
 
 @import SafariServices;
 
 @interface ViewController () <GIDSignInUIDelegate,GIDSignInDelegate,SFSafariViewControllerDelegate,FBSDKSharingDelegate>
 
 @property (nonatomic, strong) FBSDKLoginManager *fbLogin;
+@property (nonatomic, strong) SwiftLiveOullinedLabel *label;
 @property (nonatomic, assign) BOOL              twitterValidate;
+@property (nonatomic, strong) CADisplayLink *timer;
+@property (nonatomic, assign) NSUInteger totalCount;
 
 @end
 
@@ -28,6 +31,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.totalCount = 20;
     
     self.twitterValidate = NO;
     
@@ -122,22 +127,56 @@
     
     avatarView.layer.mask = circleLayer;
     
-    CGSize radii = CGSizeMake((CGRectGetHeight(giftView.bounds) / 2.0), (CGRectGetHeight(giftView.bounds) / 2.0));
-    UIRectCorner corners = UIRectCornerTopLeft| UIRectCornerBottomLeft| UIRectCornerTopRight;
-    
-    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:giftView.bounds
-                                               byRoundingCorners:corners
-                                                     cornerRadii:radii];
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:giftView.bounds cornerRadius:(CGRectGetHeight(giftView.bounds) / 2.0)];
     CAShapeLayer *pathLayer = [CAShapeLayer layer];
-    pathLayer.path = path.CGPath;
+    pathLayer.path = maskPath.CGPath;
     pathLayer.frame = giftView.layer.bounds;
-    
     giftView.layer.mask = pathLayer;
+    
+    
+    [self.view addSubview:giftView];
+    
+    self.label = [[SwiftLiveOullinedLabel alloc]initWithFrame:CGRectMake(0, 0, 80, 50)];
+    self.label.center = CGPointMake(150, 525);
+    self.label.textAlignment = NSTextAlignmentCenter;
+    self.label.giftsCount = 0;
+    self.label.font = [UIFont fontWithName:@"Georgia-BoldItalic" size:30];
+    self.label.strokeWidth = 3.0f;
+    self.label.strokeColor = [UIColor orangeColor];
+    self.label.fillColor = [UIColor yellowColor];
+
+    [self.view addSubview:self.label];
+    
     
 }
 
+- (void)step:(CADisplayLink *)timer{
+    if (self.label.giftsCount >= self.totalCount) {
+        [self stopDisplayLink];
+    }else{
+        self.label.giftsCount ++;
+    }
+ 
+}
+
+- (void)stopDisplayLink
+{
+    [self.timer invalidate];
+    self.timer = nil;
+    self.label.giftsCount = 0;
+}
+
+- (IBAction)startAnimate:(id)sender {
+    self.timer = [CADisplayLink displayLinkWithTarget:self
+                                             selector:@selector(step:)];
+    [self.timer addToRunLoop:[NSRunLoop mainRunLoop]
+                     forMode:NSDefaultRunLoopMode];
+    
+    self.timer.frameInterval = 45;
+}
+
 - (void)createView:(CGRect)frame{
-   
+    
 }
 
 - (void)didReceiveMemoryWarning {

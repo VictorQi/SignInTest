@@ -7,22 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		571A083C1CA544F200F72BF1 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 571A083B1CA544F200F72BF1 /* View.xib */; };
 		579CED011CA0FD5700A71C8D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 579CECFE1CA0FD5700A71C8D /* FBSDKCoreKit.framework */; };
 		579CED021CA0FD5700A71C8D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 579CECFF1CA0FD5700A71C8D /* FBSDKLoginKit.framework */; };
 		579CED031CA0FD5700A71C8D /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 579CED001CA0FD5700A71C8D /* FBSDKShareKit.framework */; };
+		57A4AD811CAA88BE0007692C /* SwiftLiveOullinedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A4AD801CAA88BE0007692C /* SwiftLiveOullinedLabel.m */; };
 		57ADEBE01CA0F5C3000EFDCE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ADEBDF1CA0F5C3000EFDCE /* main.m */; };
 		57ADEBE31CA0F5C3000EFDCE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ADEBE21CA0F5C3000EFDCE /* AppDelegate.m */; };
 		57ADEBE61CA0F5C3000EFDCE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ADEBE51CA0F5C3000EFDCE /* ViewController.m */; };
 		57ADEBE91CA0F5C3000EFDCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57ADEBE71CA0F5C3000EFDCE /* Main.storyboard */; };
 		57ADEBEB1CA0F5C3000EFDCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57ADEBEA1CA0F5C3000EFDCE /* Assets.xcassets */; };
 		57ADEBEE1CA0F5C3000EFDCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57ADEBEC1CA0F5C3000EFDCE /* LaunchScreen.storyboard */; };
-		57BC038D1CA2A21400FC8577 /* SwiftLiveAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BC038C1CA2A21400FC8577 /* SwiftLiveAnimationView.m */; };
 		57C4F3A11CA3C4D800739E41 /* Facebook_Headquarters_Menlo_Park.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 57C4F3A01CA3C4D800739E41 /* Facebook_Headquarters_Menlo_Park.jpg */; };
 		57C4F3A31CA4D66300739E41 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57C4F3A21CA4D66300739E41 /* Accounts.framework */; };
 		57C4F3A81CA4F0A100739E41 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57C4F3A71CA4F0A100739E41 /* QuartzCore.framework */; };
 		57C4F3AB1CA5146E00739E41 /* SwiftLiveGiftSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C4F3AA1CA5146E00739E41 /* SwiftLiveGiftSheetView.m */; };
-		57C4F3AE1CA514A900739E41 /* SwiftLiveLikeAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C4F3AD1CA514A900739E41 /* SwiftLiveLikeAnimationView.m */; };
 		57F05BBF1CA12A78005720E2 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F05BBE1CA12A78005720E2 /* GoogleSignIn.framework */; };
 		57F05BC11CA12A88005720E2 /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 57F05BC01CA12A88005720E2 /* GoogleSignIn.bundle */; };
 		57F05BC31CA12B8E005720E2 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F05BC21CA12B8E005720E2 /* libz.tbd */; };
@@ -36,10 +34,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		571A083B1CA544F200F72BF1 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		579CECFE1CA0FD5700A71C8D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		579CECFF1CA0FD5700A71C8D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		579CED001CA0FD5700A71C8D /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		57A4AD7F1CAA88BE0007692C /* SwiftLiveOullinedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftLiveOullinedLabel.h; sourceTree = "<group>"; };
+		57A4AD801CAA88BE0007692C /* SwiftLiveOullinedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftLiveOullinedLabel.m; sourceTree = "<group>"; };
 		57ADEBDB1CA0F5C3000EFDCE /* SignInTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignInTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57ADEBDF1CA0F5C3000EFDCE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		57ADEBE11CA0F5C3000EFDCE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -50,15 +49,11 @@
 		57ADEBEA1CA0F5C3000EFDCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57ADEBED1CA0F5C3000EFDCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57ADEBEF1CA0F5C3000EFDCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		57BC038B1CA2A21400FC8577 /* SwiftLiveAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftLiveAnimationView.h; sourceTree = "<group>"; };
-		57BC038C1CA2A21400FC8577 /* SwiftLiveAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftLiveAnimationView.m; sourceTree = "<group>"; };
 		57C4F3A01CA3C4D800739E41 /* Facebook_Headquarters_Menlo_Park.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Facebook_Headquarters_Menlo_Park.jpg; path = Images/Facebook_Headquarters_Menlo_Park.jpg; sourceTree = SOURCE_ROOT; };
 		57C4F3A21CA4D66300739E41 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		57C4F3A71CA4F0A100739E41 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		57C4F3A91CA5146E00739E41 /* SwiftLiveGiftSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftLiveGiftSheetView.h; sourceTree = "<group>"; };
 		57C4F3AA1CA5146E00739E41 /* SwiftLiveGiftSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftLiveGiftSheetView.m; sourceTree = "<group>"; };
-		57C4F3AC1CA514A900739E41 /* SwiftLiveLikeAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftLiveLikeAnimationView.h; sourceTree = "<group>"; };
-		57C4F3AD1CA514A900739E41 /* SwiftLiveLikeAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftLiveLikeAnimationView.m; sourceTree = "<group>"; };
 		57F05BBE1CA12A78005720E2 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
 		57F05BC01CA12A88005720E2 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
 		57F05BC21CA12B8E005720E2 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -165,13 +160,10 @@
 		57F05BD21CA24155005720E2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				57BC038B1CA2A21400FC8577 /* SwiftLiveAnimationView.h */,
-				57BC038C1CA2A21400FC8577 /* SwiftLiveAnimationView.m */,
 				57C4F3A91CA5146E00739E41 /* SwiftLiveGiftSheetView.h */,
 				57C4F3AA1CA5146E00739E41 /* SwiftLiveGiftSheetView.m */,
-				571A083B1CA544F200F72BF1 /* View.xib */,
-				57C4F3AC1CA514A900739E41 /* SwiftLiveLikeAnimationView.h */,
-				57C4F3AD1CA514A900739E41 /* SwiftLiveLikeAnimationView.m */,
+				57A4AD7F1CAA88BE0007692C /* SwiftLiveOullinedLabel.h */,
+				57A4AD801CAA88BE0007692C /* SwiftLiveOullinedLabel.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -278,7 +270,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				571A083C1CA544F200F72BF1 /* View.xib in Resources */,
 				57F05BC11CA12A88005720E2 /* GoogleSignIn.bundle in Resources */,
 				57ADEBEE1CA0F5C3000EFDCE /* LaunchScreen.storyboard in Resources */,
 				57C4F3A11CA3C4D800739E41 /* Facebook_Headquarters_Menlo_Park.jpg in Resources */,
@@ -332,9 +323,8 @@
 				57ADEBE61CA0F5C3000EFDCE /* ViewController.m in Sources */,
 				57C4F3AB1CA5146E00739E41 /* SwiftLiveGiftSheetView.m in Sources */,
 				57ADEBE31CA0F5C3000EFDCE /* AppDelegate.m in Sources */,
-				57BC038D1CA2A21400FC8577 /* SwiftLiveAnimationView.m in Sources */,
+				57A4AD811CAA88BE0007692C /* SwiftLiveOullinedLabel.m in Sources */,
 				57ADEBE01CA0F5C3000EFDCE /* main.m in Sources */,
-				57C4F3AE1CA514A900739E41 /* SwiftLiveLikeAnimationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -52,14 +52,9 @@
     
     avatarView.layer.mask = circleLayer;
     
-    CGSize radii = CGSizeMake((CGRectGetHeight(giftView.bounds) / 2.0), (CGRectGetHeight(giftView.bounds) / 2.0));
-    UIRectCorner corners = UIRectCornerTopLeft| UIRectCornerBottomLeft| UIRectCornerTopRight;
-    
-    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:giftView.bounds
-                                               byRoundingCorners:corners
-                                                     cornerRadii:radii];
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:giftView.bounds cornerRadius:(CGRectGetHeight(giftView.bounds) / 2.0)];
     CAShapeLayer *pathLayer = [CAShapeLayer layer];
-    pathLayer.path = path.CGPath;
+    pathLayer.path = maskPath.CGPath;
     pathLayer.frame = giftView.layer.bounds;
     
     giftView.layer.mask = pathLayer;
