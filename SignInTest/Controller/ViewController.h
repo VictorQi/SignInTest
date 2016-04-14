@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+#define RGBA(R/*红*/, G/*绿*/, B/*蓝*/, A/*透明*/) \
+[UIColor colorWithRed:R/255.f green:G/255.f blue:B/255.f alpha:A]
+
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#define Screen47Inch (kScreenWidth == 375)
+#define Screen55Inch (kScreenWidth == 414)
+
+#define ScreenWidthRatio kScreenWidth / 320.0
+#define ScreenHeightRatio kScreenHeight / 568.0
+
+
 typedef NS_OPTIONS(NSUInteger, SwiftLiveSignInType){
     SwiftLiveSignInTypeNone     = 0,
     SwiftLiveSignInTypeTwitter  = 1 << 0,

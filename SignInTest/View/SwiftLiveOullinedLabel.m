@@ -8,7 +8,7 @@
 
 #import "SwiftLiveOullinedLabel.h"
 
-static NSString *const kSwiftLiveGiftsCountString = @"× ";
+static NSString *const kSwiftLiveGiftsCountString = @"×";
 
 @implementation SwiftLiveOullinedLabel
 

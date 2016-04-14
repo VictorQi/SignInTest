@@ -110,19 +110,17 @@
     
     
     UIView *giftView = [[UIView alloc]initWithFrame:CGRectMake(20, 500,
-                                                               self.view.bounds.size.width * 0.67, 60)];
-    giftView.backgroundColor = [UIColor redColor];
+                                                               224, 26.5)];
+    giftView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.6];
     
-    UIImageView *avatarView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 60, 60)];
-    avatarView.center = CGPointMake(30, 30);
+    UIImageView *avatarView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0.5 * ScreenHeightRatio, 26, 26)];
     avatarView.image = [UIImage imageNamed:@"Facebook_Headquarters_Menlo_Park.jpg"];
     avatarView.contentMode = UIViewContentModeScaleAspectFill;
     [giftView addSubview:avatarView];
     
-    UIBezierPath *circlePath = [UIBezierPath bezierPathWithArcCenter:avatarView.center radius:(CGRectGetHeight(avatarView.bounds)/2) startAngle:0.0 endAngle:2 * M_PI clockwise:YES];
-    
+    UIBezierPath *ovalPath = [UIBezierPath bezierPathWithOvalInRect:avatarView.frame];
     CAShapeLayer *circleLayer = [CAShapeLayer layer];
-    circleLayer.path = circlePath.CGPath;
+    circleLayer.path = ovalPath.CGPath;
     circleLayer.frame = avatarView.bounds;
     
     avatarView.layer.mask = circleLayer;
@@ -136,18 +134,50 @@
     
     [self.view addSubview:giftView];
     
-    self.label = [[SwiftLiveOullinedLabel alloc]initWithFrame:CGRectMake(0, 0, 80, 50)];
-    self.label.center = CGPointMake(150, 525);
+    UILabel *userNameLabel = [[UILabel alloc]
+                              initWithFrame:CGRectMake(CGRectGetMaxX(avatarView.frame) + 8.5 * ScreenWidthRatio,
+                                                       3 * ScreenHeightRatio,
+                                                       80 * ScreenWidthRatio,
+                                                       10.5 * ScreenHeightRatio)];
+    userNameLabel.text = @"USER NAME";
+    userNameLabel.font = [UIFont systemFontOfSize:9];
+    userNameLabel.textColor = RGBA(236, 0, 61, 1.0);
+    userNameLabel.textAlignment = kCTTextAlignmentLeft;
+    userNameLabel.backgroundColor = [UIColor greenColor];
+    [giftView addSubview:userNameLabel];
+    
+    UILabel *label = [[UILabel alloc]
+                      initWithFrame:CGRectMake(CGRectGetMinX(userNameLabel.frame),
+                                               CGRectGetMaxY(userNameLabel.frame) + 0 * ScreenHeightRatio,
+                                               51 * ScreenWidthRatio,
+                                               10.5 * ScreenHeightRatio)];
+    label.text = @"Gift is";
+    label.font = [UIFont systemFontOfSize:9];
+    label.textAlignment = kCTTextAlignmentLeft;
+    label.textColor = [UIColor whiteColor];
+    [giftView addSubview:label];
+    
+ 
+    self.label = [[SwiftLiveOullinedLabel alloc]initWithFrame:CGRectMake(0, 0, 57.5, 20.5)];
+    self.label.layer.anchorPoint = CGPointMake(0.67, 0.5);
+    self.label.center = CGPointMake(CGRectGetMaxX(giftView.frame), CGRectGetMidY(giftView.frame));
     self.label.textAlignment = NSTextAlignmentCenter;
-    self.label.giftsCount = 0;
-    self.label.font = [UIFont fontWithName:@"Georgia-BoldItalic" size:30];
-    self.label.strokeWidth = 3.0f;
+    self.label.giftsCount = 168;
+    self.label.font = [UIFont italicSystemFontOfSize:25];
+    self.label.strokeWidth = 2.0f;
     self.label.strokeColor = [UIColor orangeColor];
     self.label.fillColor = [UIColor yellowColor];
-
+    self.label.backgroundColor = [UIColor greenColor];
     [self.view addSubview:self.label];
     
+    UIView *temp = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 56, 56)];
+    temp.backgroundColor = [UIColor redColor];
+    temp.layer.anchorPoint = CGPointMake(0.5, 0.5);
+    temp.center = CGPointMake(CGRectGetMinX(self.label.frame) - 32, CGRectGetMidY(giftView.frame));
+    [self.view addSubview:temp];
     
+    NSLog(@"%f, %f",CGRectGetMaxX(self.label.frame),CGRectGetMinX(giftView.frame));
+    NSLog(@"%f, %f",CGRectGetMinY(temp.frame),CGRectGetMaxY(temp.frame));
 }
 
 - (void)step:(CADisplayLink *)timer{
@@ -156,7 +186,6 @@
     }else{
         self.label.giftsCount ++;
     }
- 
 }
 
 - (void)stopDisplayLink
