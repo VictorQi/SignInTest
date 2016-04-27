@@ -29,7 +29,7 @@
 		57F05BC91CA12BBD005720E2 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F05BC81CA12BBD005720E2 /* SafariServices.framework */; };
 		57F05BCD1CA13711005720E2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57F05BCC1CA13711005720E2 /* GoogleService-Info.plist */; };
 		57F05BCE1CA1486C005720E2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F05BCA1CA12BC3005720E2 /* StoreKit.framework */; };
-		57F05BD71CA241EF005720E2 /* DeviceUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F05BD61CA241EF005720E2 /* DeviceUID.m */; };
+		57F05BD71CA241EF005720E2 /* FLDeviceUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F05BD61CA241EF005720E2 /* FLDeviceUID.m */; };
 		622D8F888917C2B597BEE5B4 /* libPods-SignInTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AADB3B1AD6137BAA6264FE5 /* libPods-SignInTest.a */; };
 /* End PBXBuildFile section */
 
@@ -62,8 +62,8 @@
 		57F05BC81CA12BBD005720E2 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		57F05BCA1CA12BC3005720E2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		57F05BCC1CA13711005720E2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		57F05BD51CA241EF005720E2 /* DeviceUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceUID.h; sourceTree = "<group>"; };
-		57F05BD61CA241EF005720E2 /* DeviceUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceUID.m; sourceTree = "<group>"; };
+		57F05BD51CA241EF005720E2 /* FLDeviceUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLDeviceUID.h; sourceTree = "<group>"; };
+		57F05BD61CA241EF005720E2 /* FLDeviceUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLDeviceUID.m; sourceTree = "<group>"; };
 		57F05BD81CA2474B005720E2 /* SignInTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SignInTest.entitlements; sourceTree = "<group>"; };
 		7AADB3B1AD6137BAA6264FE5 /* libPods-SignInTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SignInTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		910063C203F92659ED453C6F /* Pods-SignInTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignInTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignInTest/Pods-SignInTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -151,8 +151,8 @@
 		57F05BD11CA2414C005720E2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				57F05BD51CA241EF005720E2 /* DeviceUID.h */,
-				57F05BD61CA241EF005720E2 /* DeviceUID.m */,
+				57F05BD51CA241EF005720E2 /* FLDeviceUID.h */,
+				57F05BD61CA241EF005720E2 /* FLDeviceUID.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -319,7 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57F05BD71CA241EF005720E2 /* DeviceUID.m in Sources */,
+				57F05BD71CA241EF005720E2 /* FLDeviceUID.m in Sources */,
 				57ADEBE61CA0F5C3000EFDCE /* ViewController.m in Sources */,
 				57C4F3AB1CA5146E00739E41 /* SwiftLiveGiftSheetView.m in Sources */,
 				57ADEBE31CA0F5C3000EFDCE /* AppDelegate.m in Sources */,

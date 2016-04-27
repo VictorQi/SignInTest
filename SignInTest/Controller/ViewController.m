@@ -47,9 +47,9 @@
     [fbButton addTarget:self action:@selector(logInWithFacebook) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:fbButton];
     
-    UIButton *twitterButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+    UIButton *twitterButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 48, 48)];
     twitterButton.center = CGPointMake(self.view.center.x, 150);
-    [twitterButton setImage:[UIImage imageNamed:@"twtr-icn-logo"] forState:UIControlStateNormal];
+    [twitterButton setImage:[UIImage imageNamed:@"google+"] forState:UIControlStateNormal];
     [twitterButton setContentMode:UIViewContentModeCenter];
     [twitterButton addTarget:self action:@selector(logInWithTwitter) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:twitterButton];

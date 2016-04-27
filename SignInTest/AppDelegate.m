@@ -11,7 +11,7 @@
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import "Model/DeviceUID.h"
+#import "Model/FLDeviceUID.h"
 
 @interface AppDelegate ()
 
@@ -38,7 +38,7 @@ static NSString * const kConsumerSecret =
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
     
-    self.uuid = [DeviceUID uid];
+    self.uuid = [FLDeviceUID uid];
     
     [GIDSignIn sharedInstance].clientID = kClientID;
     

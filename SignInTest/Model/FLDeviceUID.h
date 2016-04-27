@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface DeviceUID : NSObject
+@interface FLDeviceUID : NSObject
 /**
  *  Method To Get UUID
  *

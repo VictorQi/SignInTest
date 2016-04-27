@@ -6,20 +6,20 @@
 //  Copyright © 2016年 DotC_United. All rights reserved.
 //
 
-#import "DeviceUID.h"
+#import "FLDeviceUID.h"
 
-@interface DeviceUID ()
+@interface FLDeviceUID ()
 @property (nonatomic, readonly, copy) NSString *uidKey;
 @property (nonatomic, readonly, copy) NSString *uid;
 @end
 
-@implementation DeviceUID
+@implementation FLDeviceUID
 
 @synthesize uid = _uid;
 
 #pragma mark - Public Method
 + (NSString *)uid{
-    return [[[DeviceUID alloc] initWithKey:@"deviceUID"] uid];
+    return [[[FLDeviceUID alloc] initWithKey:@"deviceUID"] uid];
 }
 
 #pragma mark - Instance methods
@@ -62,11 +62,11 @@
 /*! Persist UID to NSUserDefaults and Keychain, if not yet saved
  */
 - (void)save {
-    if (![DeviceUID valueForUserDefaultsKey:_uidKey]) {
-        [DeviceUID setValue:_uid forUserDefaultsKey:_uidKey];
+    if (![FLDeviceUID valueForUserDefaultsKey:_uidKey]) {
+        [FLDeviceUID setValue:_uid forUserDefaultsKey:_uidKey];
     }
-    if (![DeviceUID valueForKeychainKey:_uidKey service:_uidKey]) {
-        [DeviceUID setValue:_uid forKeychainKey:_uidKey inService:_uidKey];
+    if (![FLDeviceUID valueForKeychainKey:_uidKey service:_uidKey]) {
+        [FLDeviceUID setValue:_uid forKeychainKey:_uidKey inService:_uidKey];
     }
 }
 
